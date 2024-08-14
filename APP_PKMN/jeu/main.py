@@ -6,14 +6,14 @@ from title_screen import TitleScreen
 
 def main():
     pygame.init()
-    screen_width = 816
-    screen_height = 816
-    screen = pygame.display.set_mode((screen_width, screen_height))
+    WIN_WIDTH = 816
+    WIN_HEIGHT = 816
+    screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
     pygame.display.set_caption('Pokémon Rafisa')
 
     title_screen = TitleScreen(screen)
     clock = pygame.time.Clock()
-    game = Game(screen)
+    game = Game(screen, WIN_WIDTH, WIN_HEIGHT)
 
     running = True
     on_title_screen = True
@@ -39,7 +39,7 @@ def main():
             game.draw()
 
         pygame.display.flip()
-        clock.tick(500) # vitesse du jeu
+        clock.tick(60) # vitesse du jeu
 
     pygame.quit()
     sys.exit()

@@ -11,17 +11,29 @@ class TitleScreen:
 
         # Chemin d'accès à l'image
         current_path = os.path.dirname(__file__)  # Chemin d'accès du dossier actuel
-        image_path = os.path.join(current_path, 'images_videos', 'titre.png')
+        image_path = os.path.join(current_path, 'images_videos', 'Poketitre.png')
 
         # Charger l'image de fond
         self.background = pygame.image.load(image_path).convert()
 
+        # Charger l'image de fond pour l'écran d'aide
+        help_image_path = os.path.join(current_path, 'images_videos', 'options3.jpg')
+        self.help_background = pygame.image.load(help_image_path).convert()
+
+        # Cooldown pour la touche 'H'
+        self.help_toggle_cooldown = 500  # 500 ms
+        self.last_help_toggle_time = 0
+
     def update(self):
         keys = pygame.key.get_pressed()
+        current_time = pygame.time.get_ticks()
+
         if keys[pygame.K_RETURN]:
             self.start_game = True
-        if keys[pygame.K_h]:
+
+        if keys[pygame.K_h] and current_time - self.last_help_toggle_time > self.help_toggle_cooldown:
             self.show_help = not self.show_help  # Afficher ou masquer l'écran d'aide
+            self.last_help_toggle_time = current_time
 
     def draw(self):
         self.screen.blit(self.background, (0, 0))
@@ -58,29 +70,29 @@ class TitleScreen:
         self.screen.blit(help_text, help_text_rect)
 
     def draw_help(self):
-        # Créer un fond blanc pour l'aide
-        help_background = pygame.Surface(self.screen.get_size())
-        help_background.fill((255, 255, 255))
-        self.screen.blit(help_background, (0, 0))
+        # Dessiner l'image de fond pour l'aide
+        self.screen.blit(self.help_background, (0, 0))
 
         # Rendu et affichage des contrôles
         controls_title = self.font_large.render('Contrôles', True, (0, 0, 0))
         controls_text = self.font_small.render('Déplacement: flèches directionnelles', True, (0, 0, 0))
         interact_text = self.font_small.render('Interagir: E', True, (0, 0, 0))
-        start_text = self.font_small.render('Commencer: Entrée', True, (0, 0, 0))
+        start_text = self.font_small.render('Sortir des dialogues: Entrée', True, (0, 0, 0))
+        text = self.font_small.render('La table des types et ceux des pokémon sont dans le readme', True, (0, 0, 0))
         back_text = self.font_small.render('Retour: H', True, (0, 0, 0))
 
         # Rendu et affichage de l'histoire
         story_title = self.font_large.render('Histoire', True, (0, 0, 0))
-        story_text = ("Un homme étrange s'est introduit dans le bureau de Tania et s'y est enfermé, "
-                      "battez vos collègues et frayez-vous un passage dans le bureau pour l'en déloger!!")
+        story_text = ("Le stagiaire de la semaine s'est révolté et a pris possession du bureau de Tania, "
+                      "il dit qu'il ne se rendra qu'en perdant face au meilleur dresseur de Rafisa, prouvez votre force et délogez-le!")
 
         # Position et affichage des textes pour les contrôles
         self.screen.blit(controls_title, (50, 50))
         self.screen.blit(controls_text, (50, 150))
         self.screen.blit(interact_text, (50, 200))
         self.screen.blit(start_text, (50, 250))
-        self.screen.blit(back_text, (50, 300))
+        self.screen.blit(text, (50, 300))
+        self.screen.blit(back_text, (50, 350))
 
         # Position et affichage des textes pour l'histoire
         self.screen.blit(story_title, (50, 400))
@@ -110,5 +122,5 @@ class TitleScreen:
                 current_line.append(word)
                 current_width += word_width + font.render(' ', True, (0, 0, 0)).get_width()
 
-        lines.append(' '.join(current_line))  # Ajouter la dernière ligne
+        lines.append(' '.join(current_line))  # Ajoute la dernière ligne
         return lines

@@ -15,6 +15,15 @@ class Combat:
         self.font = pygame.font.Font(None, 36)
         self.in_battle = True
 
+        # Déterminer qui attaque en premier en fonction de la vitesse
+        if self.current_player_pokemon.speed > self.current_trainer_pokemon.speed:
+            self.is_player_turn = True
+        elif self.current_player_pokemon.speed < self.current_trainer_pokemon.speed:
+            self.is_player_turn = False
+        else:
+            # Si les vitesses sont égales, le joueur commence
+            self.is_player_turn = True
+
         # Charger les sprites des Pokémon
         self.player_sprites = [pygame.image.load(pokemon.image_path).convert_alpha() for pokemon in player_team]
         self.trainer_sprites = [pygame.image.load(pokemon.image_path).convert_alpha() for pokemon in trainer_team]
@@ -36,24 +45,86 @@ class Combat:
         while self.in_battle:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    self.in_battle = False
+                    self.handle_quit_event()
                 elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_1:
-                        self.player_attack(0)
-                    elif event.key == pygame.K_2:
-                        self.player_attack(1)
-                    elif event.key == pygame.K_3:
-                        self.player_attack(2)
-                    elif event.key == pygame.K_4:
-                        self.player_attack(3)
+                    if self.is_player_turn:
+                        if event.key == pygame.K_1:
+                            self.player_attack(0)
+                        elif event.key == pygame.K_2:
+                            self.player_attack(1)
+                        elif event.key == pygame.K_3:
+                            self.player_attack(2)
+                        elif event.key == pygame.K_4:
+                            self.player_attack(3)
+                        elif event.key in [pygame.K_5, pygame.K_6, pygame.K_7, pygame.K_8, pygame.K_9, pygame.K_0]:
+                            self.change_player_pokemon(event.key)
 
             self.update()
             self.draw()
             pygame.display.flip()
 
+            if not self.is_player_turn:
+                pygame.time.wait(1000)  # Attendre un moment avant que le dresseur attaque
+                self.trainer_attack()
+
             if self.is_game_over():
                 self.in_battle = False
                 return 'game_over'
+
+    def handle_quit_event(self):
+        self.show_quit_confirmation()
+
+    def show_quit_confirmation(self):
+        # Créer une surface semi-transparente pour le fond
+        overlay = pygame.Surface(self.screen.get_size())
+        overlay.fill((0, 0, 0))
+        overlay.set_alpha(200)  # 200/255 de transparence
+
+        # Afficher un message de confirmation
+        self.screen.blit(overlay, (0, 0))
+        font = pygame.font.Font(None, 74)
+        confirm_text = font.render('Voulez-vous quitter le combat ?', True, (255, 255, 255))
+        self.screen.blit(confirm_text, (self.screen.get_width() // 2 - confirm_text.get_width() // 2,
+                                        self.screen.get_height() // 2 - confirm_text.get_height() // 2))
+
+        # Afficher les options
+        font_small = pygame.font.Font(None, 36)
+        yes_text = font_small.render('Oui [Y]', True, (255, 255, 255))
+        no_text = font_small.render('Non [N]', True, (255, 255, 255))
+        self.screen.blit(yes_text, (self.screen.get_width() // 2 - 100, self.screen.get_height() // 2 + 50))
+        self.screen.blit(no_text, (self.screen.get_width() // 2 + 50, self.screen.get_height() // 2 + 50))
+
+        pygame.display.flip()
+
+        # Boucle pour gérer la réponse
+        waiting_for_response = True
+        while waiting_for_response:
+            for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_y:
+                        self.in_battle = False  # Quitter le combat
+                        pygame.quit()  # Fermer Pygame
+                        exit()  # Quitter le programme
+                    elif event.key == pygame.K_n:
+                        waiting_for_response = False  # Revenir au combat
+
+    def change_player_pokemon(self, key):
+        key_to_index = {
+            pygame.K_5: 0,
+            pygame.K_6: 1,
+            pygame.K_7: 2,
+            pygame.K_8: 3,
+            pygame.K_9: 4,
+            pygame.K_0: 5
+        }
+
+        index = key_to_index.get(key)
+        if index is not None and index < len(self.player_team):
+            if not self.player_team[index].is_ko():
+                self.current_player_pokemon_index = index
+                self.current_player_pokemon = self.player_team[self.current_player_pokemon_index]
+                # Met à jour les sprites si nécessaire, en fonction du Pokémon sélectionné
+                self.is_player_turn = False  # Passer au tour du dresseur après le changement
 
     def update(self):
         if self.current_trainer_pokemon.is_ko():
@@ -61,16 +132,24 @@ class Combat:
             if self.current_trainer_pokemon_index < len(self.trainer_team):
                 self.current_trainer_pokemon = self.trainer_team[self.current_trainer_pokemon_index]
             else:
+                # L'équipe du dresseur est KO, le joueur a gagné
                 self.in_battle = False
+                self.end_battle_message = "You won the battle!"
+                return
 
         if self.current_player_pokemon.is_ko():
-            self.current_player_pokemon_index += 1
-            if self.current_player_pokemon_index < len(self.player_team):
-                self.current_player_pokemon = self.player_team[self.current_player_pokemon_index]
+            available_pokemon = [pokemon for pokemon in self.player_team if not pokemon.is_ko()]
+            if available_pokemon:
+                # Si le Pokémon actuel est KO et qu'il y a d'autres Pokémon disponibles,
+                # basculer vers le prochain Pokémon disponible
+                self.current_player_pokemon = available_pokemon[0]
+                self.current_player_pokemon_index = self.player_team.index(self.current_player_pokemon)
             else:
+                # Si aucun Pokémon n'est disponible, le joueur a perdu
                 self.in_battle = False
+                self.end_battle_message = "You lost the battle!"
 
-        # Mettre à jour le timer pour le message d'attaque
+        # Met à jour le timer pour le message d'attaque
         if self.message_timer > 0:
             self.message_timer -= 1
 
@@ -80,24 +159,28 @@ class Combat:
             damage = attack.calculate_damage(self.current_player_pokemon, self.current_trainer_pokemon)
             self.current_trainer_pokemon.take_damage(damage)
             self.set_attack_message(f"{self.current_player_pokemon.name} used {attack.name}!")
+
             if not self.current_trainer_pokemon.is_ko():
-                self.trainer_attack()
+                self.is_player_turn = False  # Le joueur a terminé son tour
 
     def trainer_attack(self):
-        attack = self.current_trainer_pokemon.attacks[0]
-        damage = attack.calculate_damage(self.current_trainer_pokemon, self.current_player_pokemon)
-        self.current_player_pokemon.take_damage(damage)
-        self.set_attack_message(f"{self.current_trainer_pokemon.name} used {attack.name}!")
+        if len(self.current_trainer_pokemon.attacks) > 0:
+            attack = self.current_trainer_pokemon.attacks[0]  # Choisis la première attaque disponible
+            damage = attack.calculate_damage(self.current_trainer_pokemon, self.current_player_pokemon)
+            self.current_player_pokemon.take_damage(damage)
+            self.set_attack_message(f"{self.current_trainer_pokemon.name} used {attack.name}!")
+
+            self.is_player_turn = True  # Retour au tour du joueur après l'attaque du dresseur
 
     def set_attack_message(self, message):
         self.attack_message = message
-        self.message_timer = self.message_duration * 240  # Convertir la durée en frames (en supposant 60 FPS)
+        self.message_timer = self.message_duration * 240  # Converti la durée en frames (en supposant 60 FPS)
 
     def draw(self):
-        # Afficher l'image de background
+        # Affiche l'image de background
         self.screen.blit(self.background_image, (0, 0))
 
-        # Afficher les informations de combat avec un rectangle blanc pour les PV
+        # Affiche les informations de combat avec un rectangle blanc pour les PV
         if self.current_player_pokemon_index < len(self.player_team):
             player_text = f"{self.current_player_pokemon.name}: {self.current_player_pokemon.current_hp}/{self.current_player_pokemon.max_hp} HP"
             player_text_surface = self.font.render(player_text, True, (0, 0, 0))
@@ -112,7 +195,7 @@ class Combat:
             pygame.draw.rect(self.screen, (255, 255, 255), trainer_text_rect.inflate(10, 10))
             self.screen.blit(trainer_text_surface, trainer_text_rect)
 
-        # Afficher les sprites des Pokémon actuels (descendre les sprites)
+        # Affiche les sprites des Pokémon actuels (descendre les sprites)
         if self.current_player_pokemon_index < len(self.player_sprites):
             player_sprite = self.player_sprites[self.current_player_pokemon_index]
             player_sprite_rect = player_sprite.get_rect(center=(150, 556))
@@ -123,14 +206,14 @@ class Combat:
             trainer_sprite_rect = trainer_sprite.get_rect(center=(680, 270))
             self.screen.blit(trainer_sprite, trainer_sprite_rect)
 
-        # Afficher les textes des attaques en bas de l'écran
+        # Affiche les textes des attaques en bas de l'écran
         for i, attack in enumerate(self.current_player_pokemon.attacks):
             attack_text = self.font.render(f"{i + 1}. {attack.name}", True, (0, 0, 0))
             attack_text_rect = attack_text.get_rect(topleft=(50, 690 + i * 30))
             pygame.draw.rect(self.screen, (255, 255, 255), attack_text_rect.inflate(10, 10))
             self.screen.blit(attack_text, attack_text_rect)
 
-        # Afficher le message d'attaque
+        # Affiche le message d'attaque
         if self.message_timer > 0:
             message_surface = self.font.render(self.attack_message, True, (0, 0, 0))
             message_rect = message_surface.get_rect(center=(self.screen.get_width() / 2, 550))

@@ -254,11 +254,25 @@ def insert_data():
 
     # Insertion de Pokémon à donner aux dresseurs
     trainer_pokemons = [
-        ("Vaultra", 7, None, 5, 35, 55, 40, 90, 40, 40, 100, 100, 'images_videos/nvll_t_pkmn/Vaultra-f.png'),
-        ("Blatgel", 12, None, 5, 39, 52, 43, 65, 43, 43, 100, 100, 'images_videos/nvll_t_pkmn/Blatgel.png'),
-        ("Londose", 1, None, 5, 44, 48, 46, 43, 48, 48, 100, 100, 'images_videos/nvll_t_pkmn/Londose.png'),
-        ("Spectradoc", 14, None, 5, 45, 49, 49, 45, 49, 49, 100, 100, 'images_videos/nvll_t_pkmn/Spectradoc.png'),
-        ("Dratinja", 16, None, 5, 70, 20, 40, 40, 20, 20, 100, 100, 'images_videos/nvll_t_pkmn/Dratinja.png')
+        ("Vaultra", 7, None, 5, 35, 55, 40, 90, 40, 40, 100, 100, 'images_videos/nvll_t_pkmn/Vaultra-f.png'),  # combat
+        ("Blatgel", 12, None, 5, 39, 52, 43, 65, 43, 43, 100, 100, 'images_videos/nvll_t_pkmn/Blatgel.png'),  # Insecte
+        ("Londose", 8, None, 5, 44, 48, 46, 43, 48, 48, 100, 100, 'images_videos/nvll_t_pkmn/Londose.png'),  # poison
+        ("Spectradoc", 14, None, 5, 45, 49, 49, 45, 49, 49, 100, 100, 'images_videos/nvll_t_pkmn/Spectradoc.png'),  # spectre
+        ("Dratinja", 16, None, 5, 70, 20, 40, 40, 20, 20, 100, 100, 'images_videos/nvll_t_pkmn/Dratinja.png'),  # Tenebres
+        ("Un Sprite", 1, None, 5, 500, 10, 30, 10, 10, 30, 100, 100, 'images_videos/nvll_t_pkmn/ADesign.png'),  # normal
+        ("Pikachu", 4, None, 5, 40, 40, 40, 70, 50, 45, 100, 100, 'images_videos/nvll_t_pkmn/25.png'),  # elektrik
+        ("Pokipo", 17, None, 5, 50, 30, 35, 20, 30, 35, 100, 100, 'images_videos/nvll_t_pkmn/Pokipo.png'),  # acier
+        ("Féepalfou", 18, None, 5, 35, 35, 30, 40, 35, 30, 100, 100, 'images_videos/nvll_t_pkmn/Féepalfou.png'),  # fée
+        ("Pivroum", 10, None, 5, 33, 33, 38, 40, 33, 38, 100, 100, 'images_videos/nvll_t_pkmn/Pivroum.png'),  # vol
+        ("Feudkan", 2, None, 5, 50, 37, 42, 33, 42, 47, 100, 100, 'images_videos/nvll_t_pkmn/Feudkan.png'),  # feu
+        ("Rainglock", 3, None, 5, 23, 27, 35, 42, 46, 49, 100, 100, 'images_videos/nvll_t_pkmn/Rainglock.png'),  # eau
+        ("Somegrass", 5, None, 5, 33, 37, 42, 45, 48, 39, 100, 100, 'images_videos/nvll_t_pkmn/Somegrass.png'),  # plante
+        ("Gelus", 6, None, 5, 37, 34, 32, 45, 46, 46, 100, 100, 'images_videos/nvll_t_pkmn/Gelus.png'),  # glace
+        ("Sofanalyse", 11, None, 5, 35, 42, 31, 32, 38, 44, 100, 100, 'images_videos/nvll_t_pkmn/Sofanalyse.png'),  # psy
+        ("Plancher", 9, None, 5, 41, 40, 37, 33, 47, 47, 100, 100, 'images_videos/nvll_t_pkmn/Plancher.png'),  # sol
+        ("Alderiate", 13, None, 5, 45, 40, 50, 20, 45, 40, 100, 100, 'images_videos/nvll_t_pkmn/ALDERIATE.png'),  # roche
+        ("Lorneax", 15, None, 5, 50, 46, 38, 49, 43, 48, 100, 100, 'images_videos/nvll_t_pkmn/Lorneax.png')  # dragon
+
     ]
     cursor.executemany('''
     INSERT INTO TrainerPokemon (name, type1_id, type2_id, level, max_hp, attack, defense, speed, special_attack, special_defense, accuracy, evasion, image_path)
@@ -271,7 +285,21 @@ def insert_data():
         ("Blatgel", 12, None, 5, 39, 52, 43, 65, 43, 43, 100, 100, 'images_videos/nvll_t_pkmn/Blatgel_dos.png'),
         ("Londose", 1, None, 5, 44, 48, 46, 43, 48, 48, 100, 100, 'images_videos/nvll_t_pkmn/Londose_dos.png'),
         ("Spectradoc", 14, None, 5, 45, 49, 49, 45, 49, 49, 100, 100, 'images_videos/nvll_t_pkmn/Spectradoc_dos.png'),
-        ("Dratinja", 16, None, 5, 70, 20, 40, 40, 20, 20, 100, 100, 'images_videos/nvll_t_pkmn/Dratinja_dos.png')
+        ("Dratinja", 16, None, 5, 70, 20, 40, 40, 20, 20, 100, 100, 'images_videos/nvll_t_pkmn/Dratinja_dos.png'),
+        ("Un Sprite", 1, None, 5, 500, 10, 30, 10, 10, 30, 100, 100, 'images_videos/nvll_t_pkmn/ADesign_dos.png'),
+        ("Pikachu", 4, None, 5, 40, 40, 40, 70, 50, 45, 100, 100, 'images_videos/nvll_t_pkmn/25_dos.png'),
+        ("Pokipo", 17, None, 5, 50, 30, 35, 20, 30, 35, 100, 100, 'images_videos/nvll_t_pkmn/Pokipo_dos.png'),
+        ("Féepalfou", 18, None, 5, 35, 35, 30, 40, 35, 30, 100, 100, 'images_videos/nvll_t_pkmn/Féepalfou.png'),
+        ("Pivroum", 10, None, 5, 33, 33, 38, 40, 33, 38, 100, 100, 'images_videos/nvll_t_pkmn/Pivroum_dos.png'),
+        ("Feudkan", 2, None, 5, 50, 37, 42, 33, 42, 47, 100, 100, 'images_videos/nvll_t_pkmn/Feudkan_dos.png'),
+        ("Rainglock", 3, None, 5, 23, 27, 35, 42, 46, 49, 100, 100, 'images_videos/nvll_t_pkmn/Rainglock_dos.png'),
+        ("Somegrass", 5, None, 5, 33, 37, 42, 45, 48, 39, 100, 100, 'images_videos/nvll_t_pkmn/Somegrass_dos.png'),
+        ("Gelus", 6, None, 5, 37, 34, 32, 45, 46, 46, 100, 100, 'images_videos/nvll_t_pkmn/Gelus_dos.png'),
+        ("Sofanalyse", 11, None, 5, 35, 42, 31, 32, 38, 44, 100, 100, 'images_videos/nvll_t_pkmn/Sofanalyse_dos.png'),
+        ("Plancher", 9, None, 5, 41, 40, 37, 33, 47, 47, 100, 100, 'images_videos/nvll_t_pkmn/Plancher_dos.png'),
+        ("Alderiate", 13, None, 5, 45, 40, 50, 20, 45, 40, 100, 100, 'images_videos/nvll_t_pkmn/ALDERIATE_dos.png'),
+        ("Lorneax", 15, None, 5, 50, 46, 38, 49, 43, 48, 100, 100, 'images_videos/nvll_t_pkmn/Lorneax_dos.png')
+
     ]
     cursor.executemany('''
     INSERT INTO PlayerPokemon (name, type1_id, type2_id, level, max_hp, attack, defense, speed, special_attack, special_defense, accuracy, evasion, image_path)
@@ -280,18 +308,44 @@ def insert_data():
 
     # Insertion d'attaques
     attacks = [
-        ("Ball'ombre", 40, 100, 14),
-        ("Molotov", 40, 100, 2),
-        ("Lance-dagues", 40, 100, 17),
-        ("Vampirisme", 40, 100, 5),
-        ("BONK", 60, 80, 7),
-        ("Cri de guerre", 5, 100, 1),
-        ("Drapochoc", 100, 50, 15),
-        ("Invasion", 40, 85, 12),
-        ("Piqûre", 10, 100, 12),
-        ("Vol", 30, 80, 10),
-        ("Koud'kouto", 50, 90, 17),
-        ("Kayou", 5, 80, 13)
+        ("Ball'ombre (spectre)", 40, 100, 14),  # 1
+        ("Molotov (feu)", 40, 100, 2),  # 2
+        ("Lance-dagues (acier)", 40, 100, 17),  # 3
+        ("Vampirisme (plante)", 40, 100, 5),  # 4
+        ("BONK (combat)", 60, 80, 7),  # 5
+        ("Cri de guerre (normal)", 5, 100, 1),  # 6
+        ("Drapochoc (dragon)", 100, 50, 15),  # 7
+        ("Invasion (insecte)", 40, 85, 12),  # 8
+        ("Piqûre (insecte)", 10, 100, 12),  # 9
+        ("Vol (vol)", 30, 80, 10),  # 10
+        ("Koud'kouto (acier)", 50, 90, 17),  # 11
+        ("Kayou (roche)", 5, 80, 13),  # 12
+        ("Une attaque eau (eau)", 10, 100, 3),  # 13
+        ("Une attaque dragon (dragon)", 10, 100, 15),  # 14
+        ("Une attaque spectre (spectre)", 10, 100, 14),  # 15
+        ("Une attaque feu (feu)", 10, 100, 2),  # 16
+        ("Éclair (élektrik)", 30, 90, 4),  # 17
+        ("Queue de fer (acier)", 20, 100, 17),  # 18
+        ("Aéropique (vol)", 25, 80, 10),  # 19
+        ("Coup d'aile (vol)", 30, 100, 10),  # 20
+        ("Embrasement (feu)", 30, 100, 2),  # 21
+        ("Lance-flammes (feu)", 25, 80, 2),  # 22
+        ("Ball'eau (eau)", 20, 100, 3),  # 23
+        ("Tacle herbeux (plante)", 40, 70, 5),  # 24
+        ("Lance-soleil (plante)", 35, 50, 5),  # 25
+        ("Neige (glace)", 5, 100, 6),  # 26
+        ("Grêle (glace)", 30, 100, 6),  # 27
+        ("Boule de neige (glace)", 20, 50, 6),  # 28
+        ("Vent d'hiver (glace)", 10, 100, 6),  # 29
+        ("Cauchemar (psy)", 20, 80, 11),  # 30
+        ("Psychanalyse (psy)", 20, 100, 11),  # 31
+        ("Facture (vol)", 40, 100, 10),  # 32
+        ("Meme (normal)", 20, 80, 1),  # 33
+        ("Rage (roche)", 30, 90, 13),
+        ("Planche moisie (sol)", 20, 80, 9),
+        ("Sol glissant (sol)", 40, 50, 9),
+        ("Marche invisible (sol)", 10, 100, 9),
+        ("Détritus piquants (poison)", 15, 100, 8)
     ]
     cursor.executemany('''
     INSERT INTO Attacks (name, power, accuracy, type_id)
@@ -319,7 +373,59 @@ def insert_data():
         (5, 3),
         (5, 5),
         (5, 11),
-        (5, 12)
+        (5, 12),
+        (6, 13),
+        (6, 14),
+        (6, 15),
+        (6, 16),
+        (7, 17),
+        (7, 18),
+        (7, 6),
+        (7, 12),
+        (8, 18),
+        (8, 5),
+        (8, 2),
+        (8, 6),
+        (9, 4),
+        (9, 9),
+        (9, 10),
+        (9, 12),
+        (10, 10),
+        (10, 5),
+        (10, 19),
+        (10, 20),
+        (11, 2),
+        (11, 21),
+        (11, 22),
+        (11, 6),
+        (12, 1),
+        (12, 3),
+        (12, 6),
+        (12, 23),
+        (13, 8),
+        (13, 9),
+        (13, 24),
+        (13, 25),
+        (14, 26),
+        (14, 27),
+        (14, 28),
+        (14, 29),
+        (15, 6),
+        (15, 30),
+        (15, 31),
+        (15, 32),
+        (16, 35),
+        (16, 36),
+        (16, 37),
+        (16, 38),
+        (17, 12),
+        (17, 18),
+        (17, 33),
+        (17, 34),
+        (18, 22),
+        (18, 7),
+        (18, 21),
+        (18, 17)
     ]
     cursor.executemany('''
     INSERT INTO PokemonAttacks (pokemon_id, attack_id)

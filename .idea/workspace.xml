@@ -1,20 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfbdcca3-7cc8-4137-8dea-c2803caa5931" name="Changes" comment="" />
+    <list default="true" id="dfbdcca3-7cc8-4137-8dea-c2803caa5931" name="Changes" comment="Bug du dernier Pokémon de l'équipe réglé">
+      <change beforePath="$PROJECT_DIR$/.idea/Pokemon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pokemon.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/combat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/creationDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/creationDB.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/database.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/dialogue.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/dialogue.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/door.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/door.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/bus.png" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/bus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/drake.png" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/drake.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/interactive_object.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/interactive_object.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/pokemon.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/pokemon.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/pokemon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/title_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/title_screen.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/wall.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/wall.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SaltyMath&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SaltyMath/PokemonRafisa.git&quot;,
+    &quot;accountId&quot;: &quot;b9633fd7-fc20-4971-8c2b-c4252750f8f4&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2iSQOCyqqPoBet8s58mmKEuYvQo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.creationDB.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_setup.executor&quot;: &quot;Run&quot;,
+    &quot;Python.game.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.player.executor&quot;: &quot;Run&quot;,
+    &quot;Python.titre.executor&quot;: &quot;Run&quot;,
+    &quot;Python.trainer.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\m.rais\Documents\Code\Python\Pokemon\APP_PKMN\jeu\images_videos" />
+      <recent name="C:\Users\m.rais\Documents\Code\Python\Pokemon\APP_PKMN\jeu" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="creationDB" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/APP_PKMN/jeu" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/APP_PKMN/jeu/creationDB.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Pokemon" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/APP_PKMN/jeu" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/APP_PKMN/jeu/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.creationDB" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -33,5 +153,21 @@
       <updated>1719481463407</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Version démo à utiliser à Givisiez" />
+    <MESSAGE value="Bug du dernier Pokémon de l'équipe réglé" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug du dernier Pokémon de l'équipe réglé" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,5 +1,6 @@
 import pygame
 
+
 class Door(pygame.sprite.Sprite):
     def __init__(self, x, y, width, height, target_map, target_x, target_y, hitbox=None):
         super().__init__()

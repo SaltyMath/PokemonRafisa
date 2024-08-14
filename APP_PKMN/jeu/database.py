@@ -6,7 +6,11 @@ def get_pokemon_by_name(name, is_player=True):
     cursor = conn.cursor()
 
     table = 'PlayerPokemon' if is_player else 'TrainerPokemon'
-    cursor.execute(f'SELECT * FROM {table} WHERE name=?', (name,))
+    cursor.execute(f'''
+        SELECT id, name, type1_id, type2_id, level, max_hp, attack, defense, speed, special_attack, special_defense, accuracy, evasion, image_path
+        FROM {table} 
+        WHERE name=?
+    ''', (name,))
     result = cursor.fetchone()
 
     conn.close()

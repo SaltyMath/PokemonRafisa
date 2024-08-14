@@ -9,7 +9,7 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.topleft = (x, y)
         self.team = self.create_pokemon_team(pokemon_names)
-        self.speed = 0.6
+        self.speed = 3
 
     def create_pokemon_team(self, pokemon_names):
         return [Pokemon(name, is_player=True) for name in pokemon_names]
@@ -21,6 +21,7 @@ class Player(pygame.sprite.Sprite):
         old_rect = self.rect.copy()
         move_x, move_y = 0, 0
 
+        # Vérification des touches pour le mouvement
         if keys[pygame.K_LEFT]:
             move_x = -self.speed
         if keys[pygame.K_RIGHT]:
@@ -30,10 +31,12 @@ class Player(pygame.sprite.Sprite):
         if keys[pygame.K_DOWN]:
             move_y = self.speed
 
+        # Normaliser la vitesse lors d'un déplacement en diagonale
         if move_x != 0 and move_y != 0:
-            move_x *= 0.7071
-            move_y *= 0.7071
+            move_x *= 0.7071  # 1/sqrt(2)
+            move_y *= 0.7071  # 1/sqrt(2)
 
+        # Appliquer le mouvement et gérer les collisions
         self.rect.x += move_x
         if pygame.sprite.spritecollideany(self, walls):
             self.rect.x = old_rect.x
@@ -42,14 +45,15 @@ class Player(pygame.sprite.Sprite):
         if pygame.sprite.spritecollideany(self, walls):
             self.rect.y = old_rect.y
 
+        # Limiter le mouvement du joueur à l'intérieur des limites de la carte
         if self.rect.left < 0:
             self.rect.left = 0
-        if self.rect.right > 816:
-            self.rect.right = 816
+        if self.rect.right > 1680:
+            self.rect.right = 1680
         if self.rect.top < 0:
             self.rect.top = 0
-        if self.rect.bottom > 816:
-            self.rect.bottom = 816
+        if self.rect.bottom > 1440:
+            self.rect.bottom = 1440
 
     def heal_pokemon(self):
         for pokemon in self.team:
