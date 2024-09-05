@@ -1,0 +1,64 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
+  <diagram name="Page-1" id="qt3saRX1gm0jep3i0dzl">
+    <mxGraphModel dx="1338" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QJKMBpkT0Tbk8P4YynjV-1" target="QJKMBpkT0Tbk8P4YynjV-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-1" value="Pokemon" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="120" width="126" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QJKMBpkT0Tbk8P4YynjV-3" target="QJKMBpkT0Tbk8P4YynjV-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-3" value="APP_PKMN" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="357" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QJKMBpkT0Tbk8P4YynjV-5" target="QJKMBpkT0Tbk8P4YynjV-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QJKMBpkT0Tbk8P4YynjV-5" target="QJKMBpkT0Tbk8P4YynjV-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QJKMBpkT0Tbk8P4YynjV-5" target="QJKMBpkT0Tbk8P4YynjV-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-5" value="jeu" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="357" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QJKMBpkT0Tbk8P4YynjV-7" target="QJKMBpkT0Tbk8P4YynjV-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QJKMBpkT0Tbk8P4YynjV-7" target="QJKMBpkT0Tbk8P4YynjV-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="QJKMBpkT0Tbk8P4YynjV-7" target="QJKMBpkT0Tbk8P4YynjV-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-7" value="images_videos" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="525" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-10" value="combat.py&lt;div&gt;creationDB.py&lt;/div&gt;&lt;div&gt;database.py&lt;/div&gt;&lt;div&gt;dialogue.py&lt;/div&gt;&lt;div&gt;door.py&lt;/div&gt;&lt;div&gt;game.py&lt;/div&gt;&lt;div&gt;interactive_object.py&lt;/div&gt;&lt;div&gt;main.py&lt;/div&gt;&lt;div&gt;map.py&lt;/div&gt;&lt;div&gt;player.py&lt;/div&gt;&lt;div&gt;pokemon.db&lt;/div&gt;&lt;div&gt;pokemon.py&lt;/div&gt;&lt;div&gt;resize_image.py&lt;/div&gt;&lt;div&gt;team.py&lt;/div&gt;&lt;div&gt;title_screen.py&lt;/div&gt;&lt;div&gt;trainer.py&lt;/div&gt;&lt;div&gt;wall.py&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="525" width="120" height="265" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-12" value="pokemon_taille_originale" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="665" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-14" value="nvll_t_pkmn" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-16" value="test" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="640" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-18" value="Fichiers Python/SQL" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="400" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QJKMBpkT0Tbk8P4YynjV-19" value="Images" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="480" y="400" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

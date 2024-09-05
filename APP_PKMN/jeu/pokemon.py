@@ -25,7 +25,7 @@ class Pokemon:
             # Récupère les attaques du Pokémon et les initialise en tant qu'objets Attack
             self.attacks = [Attack(*attack) for attack in get_attacks_for_pokemon(self.id)]
         else:
-            raise ValueError(f"Pokemon with name {name} not found in database")
+            raise ValueError(f"Le Pokémon {name} n'est pas dans la base de données")
 
     def is_ko(self):
         # Vérifie si le Pokémon est KO (points de vie à zéro ou moins)

@@ -4,27 +4,97 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfbdcca3-7cc8-4137-8dea-c2803caa5931" name="Changes" comment="Bug du dernier Pokémon de l'équipe réglé">
+    <list default="true" id="dfbdcca3-7cc8-4137-8dea-c2803caa5931" name="Changes" comment="Version 1.0 du jeu (archive)">
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/Ressources/.$SystemeCombat.drawio.bkp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/Ressources/ArboPoké.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/Ressources/ArboPoké.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/Ressources/MCD-pkmn.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/Ressources/MCD-pkmn.drawio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/Ressources/SystemeCombat.drawio" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/Ressources/SystemeCombat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/Ebrendan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/Emay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/Map003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/Map003a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/Map004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/Poketitre.pdn" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/Poketitre.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/R.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/Rainglockb.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/Rainglockf.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/aquagruntmbeta.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/archie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/beauty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/businessman2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/combat_epsic1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/combat_epsic2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/crédits.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/cuisine2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/cyclistm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/daycarestudentm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/doctorf.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/escaliers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/escaliers2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/gentleman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/gentleman2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/hexmaniac.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/hiker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/lass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/lucy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/matt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/norman.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/25.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/25_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/ADesign.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/ADesign_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/ALDERIATE.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/ALDERIATE_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Feudkan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Feudkan_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Féepalfou.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Gelus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Gelus_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Lorneax.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Lorneax_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Pivroum.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Pivroum_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Plancher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Plancher_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Pokipo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Pokipo_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Rainglock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Rainglock_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Sofanalyse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/Sofanalyse_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/somegrass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/nvll_t_pkmn/somegrass_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/officelady.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/options.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/options2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/options3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/palmer2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/pokemon_taille_originale/ADesign.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/pokemon_taille_originale/ADesign_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/pokemon_taille_originale/Pokipo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/pokemon_taille_originale/Pokipo_dos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/pokemonrangerm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/raftitre.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/roxanne.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/sailor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/secret_door.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/skinhead.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/steven.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/supernerd.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/tabledestypes.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/wallace.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/wally.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/worker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Pokemon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pokemon.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/combat.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/combat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/creationDB.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/creationDB.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/dialogue.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/dialogue.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/door.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/door.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/bus.png" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/bus.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/drake.png" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/images_videos/drake.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/interactive_object.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/interactive_object.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/map.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/pokemon.db" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/pokemon.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/pokemon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/title_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/title_screen.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/trainer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP_PKMN/jeu/wall.py" beforeDir="false" afterPath="$PROJECT_DIR$/APP_PKMN/jeu/wall.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,11 +145,14 @@
     &quot;Python.titre.executor&quot;: &quot;Run&quot;,
     &quot;Python.trainer.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/m.rais/OneDrive - Rafisa Informatik GmbH/sauvegardePCDocument/Code/Python/Pokemon&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\m.rais\Documents\Code\Python\Pokemon\APP_PKMN\Ressources" />
       <recent name="C:\Users\m.rais\Documents\Code\Python\Pokemon\APP_PKMN\jeu\images_videos" />
       <recent name="C:\Users\m.rais\Documents\Code\Python\Pokemon\APP_PKMN\jeu" />
     </key>
@@ -152,12 +225,33 @@
       <option name="presentableId" value="Default" />
       <updated>1719481463407</updated>
     </task>
+    <task id="LOCAL-00001" summary="Bug du dernier Pokémon de l'équipe réglé">
+      <option name="closed" value="true" />
+      <created>1723640734214</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723640734214</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Version démo à utiliser à Givisiez" />
     <MESSAGE value="Bug du dernier Pokémon de l'équipe réglé" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug du dernier Pokémon de l'équipe réglé" />
+    <MESSAGE value="Version 1.0 du jeu (archive)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0 du jeu (archive)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

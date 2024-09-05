@@ -113,7 +113,7 @@ class Game:
         self.init_interactive_bus()
 
         # Initialise le joueur après avoir défini la carte initiale
-        player_team = ["Vaultra", "Alderiate", "Feudkan", "Lorneax"]  # Noms des Pokémon de l'équipe du joueur
+        player_team = ["Vaultra", "Alderiate", "Feudkan", "Lorneax"]  # Vous pouvez les changer si vous voulez, mettez juste leur nom entre guillemets, séparés par une virgule
         self.player = Player(400, 300, player_team)  # Position initiale arbitraire
         self.all_sprites.add(self.player)
 
