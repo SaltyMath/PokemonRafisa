@@ -5,7 +5,7 @@ class Door(pygame.sprite.Sprite):
     def __init__(self, x, y, width, height, target_map, target_x, target_y, hitbox=None):
         super().__init__()
         self.image = pygame.Surface((width, height))
-        self.image.fill((0, 0, 0))  # Une couleur visible pour la porte (peut être remplacée par une image)
+        self.image.fill((0, 0, 0))  # Une couleur visible pour la porte (peut être remplacée par une image).
         self.rect = self.image.get_rect()
         self.rect.topleft = (x, y)
         self.target_map = target_map

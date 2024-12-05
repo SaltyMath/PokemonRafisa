@@ -39,7 +39,7 @@ def main():
             game.draw()
 
         pygame.display.flip()
-        clock.tick(60) # vitesse du jeu
+        clock.tick(60) # vitesse du jeu (fps)
 
     pygame.quit()
     sys.exit()

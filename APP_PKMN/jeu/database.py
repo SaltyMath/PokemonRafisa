@@ -1,6 +1,6 @@
 import sqlite3
 
-
+# Là où sont récupérées les données
 def get_pokemon_by_name(name, is_player=True):
     conn = sqlite3.connect('pokemon.db')
     cursor = conn.cursor()

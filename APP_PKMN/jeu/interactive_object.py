@@ -12,7 +12,7 @@ class InteractiveObject(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.topleft = (x, y)
         self.message = message
-        self.heal = heal  # Attribut pour indiquer si l'objet peut soigner
+        self.heal = heal  # Attribut pour indiquer si l'objet soigne
 
     def interact(self, player):
         if self.heal:

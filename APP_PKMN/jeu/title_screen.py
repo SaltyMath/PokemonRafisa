@@ -44,10 +44,9 @@ class TitleScreen:
             self.draw_title()
 
     def draw_title(self):
-        # Rendu du texte principal
         start_text = self.font_large.render('Appuyez sur Entrée', True, (0, 0, 0))
 
-        # Calcul pour centrer le texte
+        # Centrer le texte
         text_rect = start_text.get_rect(center=(self.screen.get_width() // 2, self.screen.get_height() - 100))
 
         # Créer un rectangle derrière le texte

@@ -37,7 +37,7 @@ class Trainer(pygame.sprite.Sprite):
     def set_defeated(self):
         self.defeated = True
 
-
+# Création des dresseurs
 class Trainer1(Trainer):
     def __init__(self, x, y, map_name):
         pokemon_names = ["Spectradoc", "Sofanalyse"]

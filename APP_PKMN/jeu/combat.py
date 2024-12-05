@@ -15,7 +15,7 @@ class Combat:
         self.font = pygame.font.Font(None, 36)
         self.in_battle = True
 
-        # Déterminer qui attaque en premier en fonction de la vitesse
+        # Le plus rapide tape en premier
         if self.current_player_pokemon.speed > self.current_trainer_pokemon.speed:
             self.is_player_turn = True
         elif self.current_player_pokemon.speed < self.current_trainer_pokemon.speed:
@@ -24,22 +24,22 @@ class Combat:
             # Si les vitesses sont égales, le joueur commence
             self.is_player_turn = True
 
-        # Charger les sprites des Pokémon
+        # Chargement des sprites des Pokémon
         self.player_sprites = [pygame.image.load(pokemon.image_path).convert_alpha() for pokemon in player_team]
         self.trainer_sprites = [pygame.image.load(pokemon.image_path).convert_alpha() for pokemon in trainer_team]
 
-        # Charger l'image de background
+        # Chargement de l'image de background
         self.background_image = pygame.image.load(background_image).convert_alpha()
 
-        # Texte temporaire pour afficher le nom de l'attaque
+        # Affichage du nom de l'attaque
         self.attack_message = ""
         self.message_timer = 0
-        self.message_duration = 2  # Durée en secondes pendant laquelle le message est affiché
+        self.message_duration = 2
 
-        # Variables pour gérer la fin du combat
+        # Fin du combat
         self.end_battle_message = ""
         self.end_battle_timer = 0
-        self.end_battle_duration = 3  # Durée en secondes avant la fin du combat
+        self.end_battle_duration = 3
 
     def run(self):
         while self.in_battle:
@@ -64,7 +64,7 @@ class Combat:
             pygame.display.flip()
 
             if not self.is_player_turn:
-                pygame.time.wait(1000)  # Attendre un moment avant que le dresseur attaque
+                pygame.time.wait(1000)  # Moment de blanc avant que le dresseur attaque
                 self.trainer_attack()
 
             if self.is_game_over():
@@ -75,12 +75,11 @@ class Combat:
         self.show_quit_confirmation()
 
     def show_quit_confirmation(self):
-        # Créer une surface semi-transparente pour le fond
         overlay = pygame.Surface(self.screen.get_size())
         overlay.fill((0, 0, 0))
-        overlay.set_alpha(200)  # 200/255 de transparence
+        overlay.set_alpha(200)
 
-        # Afficher un message de confirmation
+        # Demande au joueur s'il veut quitter le jeu pendant le combat
         self.screen.blit(overlay, (0, 0))
         font = pygame.font.Font(None, 74)
         confirm_text = font.render('Voulez-vous quitter le combat ?', True, (255, 255, 255))
@@ -96,15 +95,14 @@ class Combat:
 
         pygame.display.flip()
 
-        # Boucle pour gérer la réponse
         waiting_for_response = True
         while waiting_for_response:
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_y:
                         self.in_battle = False  # Quitter le combat
-                        pygame.quit()  # Fermer Pygame
-                        exit()  # Quitter le programme
+                        pygame.quit()
+                        exit()
                     elif event.key == pygame.K_n:
                         waiting_for_response = False  # Revenir au combat
 

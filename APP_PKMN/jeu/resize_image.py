@@ -1,6 +1,6 @@
 from PIL import Image
 import os
-
+# À exécuter manuellement
 
 def resize_image(input_path, output_path, size):
     with Image.open(input_path) as img:

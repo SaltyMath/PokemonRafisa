@@ -45,7 +45,7 @@ class Player(pygame.sprite.Sprite):
         if pygame.sprite.spritecollideany(self, walls):
             self.rect.y = old_rect.y
 
-        # Limiter le mouvement du joueur à l'intérieur des limites de la carte
+        # Limites de la carte pour le joueur
         if self.rect.left < 0:
             self.rect.left = 0
         if self.rect.right > 1680:

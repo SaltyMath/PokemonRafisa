@@ -69,7 +69,6 @@ class Map:
         # Ajoute les objets interactifs
         for obj in interactive_objects:
             if isinstance(obj, InteractiveObject):
-                # Ajoute directement l'objet s'il s'agit déjà d'une instance d'InteractiveObject ou de ses sous-classes
                 self.interactive_objects.add(obj)
             else:
                 # Traite les objets interactifs définis par des tuples

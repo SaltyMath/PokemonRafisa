@@ -437,11 +437,11 @@ def insert_data():
 
 
 def reset_database():
-    # Supprimer le fichier de base de données s'il existe
+    # Supprime le fichier de base de données s'il existe
     if os.path.exists('pokemon.db'):
         os.remove('pokemon.db')
 
-    # Recréer les tables et insérer les données
+    # Recrée les tables et insére les données
     create_tables()
     insert_data()
 

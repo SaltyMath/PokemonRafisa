@@ -13,7 +13,7 @@ class Pokemon:
             self.type2_id = data[3]
             self.level = data[4]
             self.max_hp = data[5]
-            self.current_hp = self.max_hp  # Les HP actuels sont initialisés à la valeur maximale
+            self.current_hp = self.max_hp
             self.attack = data[6]
             self.defense = data[7]
             self.speed = data[8]

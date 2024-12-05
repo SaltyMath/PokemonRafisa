@@ -1,5 +1,5 @@
 from pokemon import Pokemon
-
+# Fichier des équipes
 
 class Team:
     def __init__(self, pokemon_names):

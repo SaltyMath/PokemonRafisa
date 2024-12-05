@@ -1,5 +1,8 @@
 import pygame
+import os
+import sqlite3
 import time
+from title_screen import TitleScreen
 from player import Player
 from trainer import (Trainer1, Trainer2, Trainer3, Trainer4, Trainer5, Trainer6,
                      Trainer7, Trainer8, Trainer9, Trainer10, Trainer11, Trainer12,
@@ -101,6 +104,9 @@ class Game:
             Eleve3: False, Eleve4: False, Eleve5: False, Eleve6: False, Eleve7: False,
             Eleve8: False, Eleve9: False, Eleve10: False, Doyen: False
         }
+
+        self.show_title_screen()
+
         self.trainer11_defeated = False
 
         # Initialise les cartes
@@ -112,9 +118,11 @@ class Game:
         # Initialise l'objet bus interactif
         self.init_interactive_bus()
 
+        self.db_path = os.path.join(os.path.dirname(__file__), 'pokemon.db')
+        self.player_team = self.select_team_from_db()
+
         # Initialise le joueur après avoir défini la carte initiale
-        player_team = ["Vaultra", "Alderiate", "Feudkan", "Lorneax"]  # Vous pouvez les changer si vous voulez, mettez juste leur nom entre guillemets, séparés par une virgule
-        self.player = Player(400, 300, player_team)  # Position initiale arbitraire
+        self.player = Player(400, 300, self.player_team)  # Position initiale arbitraire
         self.all_sprites.add(self.player)
 
         # Changer la carte initiale
@@ -122,6 +130,119 @@ class Game:
 
         # Police pour le compteur de dresseurs
         self.font = pygame.font.Font(None, 36)
+
+    def show_title_screen(self):
+        title_screen = TitleScreen(self.screen)
+        clock = pygame.time.Clock()
+
+        running = True
+        while not title_screen.start_game and running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+            title_screen.update()
+            title_screen.draw()
+            pygame.display.flip()
+            clock.tick(60)
+
+        if not running:
+            pygame.quit()
+            exit()
+
+    def connect_db(self):
+        try:
+            conn = sqlite3.connect(self.db_path)
+            return conn
+        except sqlite3.Error as e:
+            print(f"Error connecting to database: {e}")
+            return None
+
+    def fetch_pokemon_from_db(self):
+        conn = self.connect_db()
+        if conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT name FROM PlayerPokemon")
+            pokemon_list = [row[0] for row in cursor.fetchall()]
+            conn.close()
+            return pokemon_list
+        return []
+
+    def select_team_from_db(self):
+        available_pokemon = self.fetch_pokemon_from_db()
+        if not available_pokemon:
+            print("Pokémon introuvable")
+            return []
+
+        selected_team = []
+        font = pygame.font.Font(None, 30)
+        max_columns = 2
+        max_pokemon_per_column = 9
+        column_width = self.WIN_WIDTH // max_columns
+        pokemon_rects = []
+
+        while True:
+            self.screen.fill((255, 255, 255))
+            pokemon_rects = []
+
+            for i, pokemon in enumerate(available_pokemon):
+                column = i // max_pokemon_per_column
+                row = i % max_pokemon_per_column
+                if column >= max_columns:
+                    break
+                x = column * column_width + 50
+                y = 100 + row * 40
+                text_surface = font.render(pokemon, True, (0, 0, 0))
+
+                text_rect = text_surface.get_rect(center=(x + column_width // 2, y))
+
+                self.screen.blit(text_surface, text_rect)
+
+                pokemon_rects.append((text_rect, pokemon))
+
+            selected_team_text = font.render(f"{', '.join(selected_team)}", True, (0, 0, 0))
+            selected_team_rect = selected_team_text.get_rect(
+                center=(self.WIN_WIDTH // 2, 50))
+            self.screen.blit(selected_team_text, selected_team_rect)
+
+            if len(selected_team) >= 1:
+                validation_text = font.render("Appuyez sur Entrée pour valider", True, (0, 255, 0))
+                remove_info_text = font.render("Appuyez sur 'Supprimer' pour retirer le dernier Pokémon choisi", True,
+                                               (0, 255, 0))
+            else:
+                validation_text = font.render("Choisissez entre 1 et 6 Pokémon en cliquant dessus", True, (255, 0, 0))
+                remove_info_text = font.render("Appuyez sur 'Supprimer' pour retirer le dernier Pokémon choisi", True,
+                                               (255, 0, 0))
+
+            validation_text_rect = validation_text.get_rect(center=(self.WIN_WIDTH // 2, self.WIN_HEIGHT - 60))
+
+            remove_info_text_rect = remove_info_text.get_rect(
+                center=(self.WIN_WIDTH // 2, validation_text_rect.bottom + 20))
+
+            self.screen.blit(validation_text, validation_text_rect)
+            self.screen.blit(remove_info_text, remove_info_text_rect)
+
+            pygame.display.flip()
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    exit()
+
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:
+                        mouse_pos = event.pos
+                        if len(selected_team) < 6:
+                            for rect, pokemon in pokemon_rects:
+                                if rect.collidepoint(mouse_pos):
+                                    selected_team.append(pokemon)
+                                    break
+
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RETURN and 1 <= len(selected_team) <= 6:
+                        return selected_team
+
+                    elif event.key == pygame.K_BACKSPACE and selected_team:
+                        selected_team.pop()
 
     # Position des murs, portes et autres objets
     def init_maps(self):
@@ -152,10 +273,10 @@ class Game:
             (-510, 771, 800, 60),  # Mur inférieur gauche
             (380, 771, 800, 60),  # Mur inférieur droit
             (5, 0, 40, 802),  # Mur gauche
-            (770, 0, 10, 802),  # Mur droite
-            (245, 481, 40, 802),  # Séparation coin miam - open space (droite)
-            (140, 522, 145, 40),  # Séparation cuisine - salle à manger (milieu)
-            (-10, 290, 300, 40),  # Séparation salle à manger - open space (haut)
+            (770, 0, 10, 802),  # Mur de droite
+            (245, 481, 40, 802),  # Séparation coin miam-open space (droite)
+            (140, 522, 145, 40),  # Séparation cuisine-salle à manger (milieu)
+            (-10, 290, 300, 40),  # Séparation salle à manger-open space (haut)
             (580, 240, 400, 40),  # Mur inférieur bureau Tania
             (444, -522, 35, 802),  # Mur côté bureau Tania
             (390, 441, 40, 259),  # Caisses
